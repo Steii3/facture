@@ -5,6 +5,10 @@
 <?php
 require("connexion.php");
 $resultat=mysqli_query($connexion ,"select * from client");
+$max=mysqli_query($connexion ,"select max(NumCli) from client");
+
+$max += 4;
+echo "max = $max";
 if ($resultat)
 {
 	echo "<h2>Contenue de la table Client</h2><br><br>\n";
